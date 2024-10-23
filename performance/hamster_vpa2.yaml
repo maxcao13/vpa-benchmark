@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hamster-{{index}}
+spec:
+  selector:
+    matchLabels:
+      app: hamster-{{index}}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hamster-{{index}}
+    spec:
+      securityContext:
+        runAsNonRoot: true
+      containers:
+        - name: hamster
+          image: quay.io/prometheus/busybox@sha256:dfa54ef35e438b9e71ac5549159074576b6382f95ce1a434088e05fd6b730bc4
+          resources:
+            requests:
+              cpu: 1m
+              memory: 5Mi
+            limits:
+              cpu: 10m
+              memory: 50Mi
+          command: ["/bin/sh"]
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+          args:
+            - "-c"
+            - "while true; do timeout 5s yes >/dev/null; sleep 70; done" # sleep longer than the VPA sync period
+        - name: busybox
+          image: quay.io/prometheus/busybox@sha256:dfa54ef35e438b9e71ac5549159074576b6382f95ce1a434088e05fd6b730bc4
+          resources:
+            requests:
+              cpu: 1m
+              memory: 5Mi
+            limits:
+              cpu: 10m
+              memory: 50Mi
+          command: ["/bin/sh"]
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+          args:
+            - "-c"
+            - "while true; do echo 'busybox'; sleep 15; done"
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: hamster-vpa-{{index}}
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: hamster-{{index}}
+  resourcePolicy:
+    containerPolicies:
+      - containerName: '*'
+        minAllowed:
+          cpu: 1m
+          memory: 5Mi
+        maxAllowed:
+          cpu: 10m
+          memory: 50Mi
+        controlledResources: ["cpu", "memory"]
+  updatePolicy:
+    minReplicas: 1 # allow VPA to work on a single replica workload
+    updateMode: "Auto"
+

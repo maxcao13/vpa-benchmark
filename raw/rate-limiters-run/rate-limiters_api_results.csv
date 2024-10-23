@@ -1,0 +1,7 @@
+Step;APIPerformance;Webhook;RequestLatency
+640 deployments|1 containers|admission|40;220.99req/s;4991.98ms/req;24.65ms/req;
+640 deployments|1 containers|recommender|40;241.14req/s;4977.72ms/req;23.97ms/req;
+640 deployments|1 containers|updater|40;253.62req/s;5395.56ms/req;35.29ms/req;
+640 deployments|1 containers|all|40;252.97req/s;5613.33ms/req;40.41ms/req;
+640 deployments|1 containers|all|80;262.34req/s;5551.15ms/req;42.25ms/req;
+640 deployments|1 containers|all|80|Memory Saver;257.05req/s;5585.93ms/req;32.47ms/req;

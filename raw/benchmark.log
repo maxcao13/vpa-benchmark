@@ -1,0 +1,805 @@
+Time now: 2024-10-08T12:17:25-07:00
+Cluster info: 20 worker node(s) with a total of 80 CPU cores and 306Gi memory. 557 total pods.
+--- Resource Capacity ---
+NODE                           CPU REQUESTS   CPU LIMITS   MEMORY REQUESTS   MEMORY LIMITS
+*                              8167m (11%)    200m (0%)    55358Mi (19%)     0Mi (0%)
+ip-10-0-101-10.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-101-107.ec2.internal   719m (20%)     10m (0%)     4631Mi (31%)      0Mi (0%)
+ip-10-0-119-59.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-17-99.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-25-69.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-33-147.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-44-141.ec2.internal    425m (12%)     10m (0%)     3042Mi (20%)      0Mi (0%)
+ip-10-0-53-123.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-53-31.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-58-7.ec2.internal      374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-60-141.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-73-222.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-73-86.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-74-170.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-81-223.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-9-194.ec2.internal     665m (19%)     10m (0%)     4284Mi (29%)      0Mi (0%)
+ip-10-0-9-64.ec2.internal      374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-90-27.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-90-9.ec2.internal      374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-92-134.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Running all tests...
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+Waiting for deployment "vpa-updater-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15
+################################################################
+# TEST PHASE (Deployments): Starting at 2024-10-08T12:18:02-07:00.
+################################################################
+----------------------------------------------------------------
+| Testing with 64 hamster deployments (1 pod each, 1 container each pod, 64 VPAs)... 2024-10-08T12:18:02-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T12:18:04 to 2024-10-08T12:23:04
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 14.45MiB    | 26.72MiB    | 58.23MiB    | 59.90MiB    |  
+| median | 14.41MiB    | 26.72MiB    | 57.92MiB    | 59.94MiB    |  
+| max    | 14.51MiB    | 26.72MiB    | 59.98MiB    | 60.23MiB    |  
+| min    | 14.41MiB    | 26.72MiB    | 56.46MiB    | 59.18MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T12:18:04 to 2024-10-08T12:23:04
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.66m       | 1.08m       | 6.38m       | 2.35m       |  
+| median | 0.64m       | 0.54m       | 5.54m       | 0.82m       |  
+| max    | 0.72m       | 3.47m       | 13.87m      | 9.63m       |  
+| min    | 0.61m       | 0.08m       | 2.29m       | 0.00m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T12:18:04 to 2024-10-08T12:23:04
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 121.62req/s  |  
+| webhook    | 608.15ms/req |  
+| reqlatency | 20.86ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 256 hamster deployments (1 pod each, 1 container each pod, 256 VPAs)... 2024-10-08T12:23:26-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T12:23:34 to 2024-10-08T12:28:34
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 14.28MiB    | 39.43MiB    | 76.98MiB    | 85.15MiB    |  
+| median | 14.25MiB    | 39.47MiB    | 79.97MiB    | 85.40MiB    |  
+| max    | 14.42MiB    | 39.47MiB    | 85.29MiB    | 86.88MiB    |  
+| min    | 14.24MiB    | 39.30MiB    | 62.16MiB    | 83.65MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T12:23:34 to 2024-10-08T12:28:34
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.67m       | 16.70m      | 32.79m      | 26.98m      |  
+| median | 0.61m       | 13.21m      | 18.72m      | 21.65m      |  
+| max    | 0.83m       | 49.13m      | 86.73m      | 61.19m      |  
+| min    | 0.60m       | 0.24m       | 7.57m       | 2.37m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T12:23:34 to 2024-10-08T12:28:34
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 190.05req/s  |  
+| webhook    | 2263.70ms/req|  
+| reqlatency | 24.54ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 1024 hamster deployments (1 pod each, 1 container each pod, 1024 VPAs)... 2024-10-08T12:29:46-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T12:30:16 to 2024-10-08T12:35:16
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 14.28MiB    | 81.49MiB    | 143.87MiB   | 152.95MiB   |  
+| median | 14.29MiB    | 81.50MiB    | 147.38MiB   | 156.93MiB   |  
+| max    | 14.29MiB    | 83.62MiB    | 168.27MiB   | 163.54MiB   |  
+| min    | 14.27MiB    | 79.36MiB    | 117.88MiB   | 142.58MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T12:30:16 to 2024-10-08T12:35:16
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.66m       | 34.31m      | 42.60m      | 39.27m      |  
+| median | 0.63m       | 24.00m      | 32.91m      | 38.51m      |  
+| max    | 0.74m       | 83.38m      | 98.27m      | 78.47m      |  
+| min    | 0.60m       | 17.07m      | 16.30m      | 3.06m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T12:30:16 to 2024-10-08T12:35:16
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 279.77req/s  |  
+| webhook    | 7486.67ms/req|  
+| reqlatency | 23.44ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+################################################################
+# TEST PHASE (Deployments): Completed at 2024-10-08T12:38:30-07:00.
+################################################################
+
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15
+################################################################
+# TEST PHASE (Deployment w/ Scaling Pods PART 1): Starting at 2024-10-08T12:39:02-07:00.
+################################################################
+----------------------------------------------------------------
+| Testing with 64 hamster deployments (2 pods each, 1 container each pod, 64 VPAs)... 2024-10-08T12:39:02-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T12:39:03 to 2024-10-08T12:44:03
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 16.68MiB    | 26.67MiB    | 64.08MiB    | 70.37MiB    |  
+| median | 16.52MiB    | 26.67MiB    | 64.28MiB    | 70.54MiB    |  
+| max    | 17.32MiB    | 26.67MiB    | 66.39MiB    | 71.04MiB    |  
+| min    | 16.50MiB    | 26.66MiB    | 61.20MiB    | 69.86MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T12:39:03 to 2024-10-08T12:44:03
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.66m       | 3.94m       | 5.22m       | 9.08m       |  
+| median | 0.63m       | 0.46m       | 5.62m       | 12.99m      |  
+| max    | 0.71m       | 17.91m      | 7.95m       | 15.82m      |  
+| min    | 0.62m       | 0.10m       | 3.10m       | 0.73m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T12:39:03 to 2024-10-08T12:44:03
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 132.17req/s  |  
+| webhook    | 1398.52ms/req|  
+| reqlatency | 23.00ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 256 hamster deployments (2 pods each, 1 container each pod, 256 VPAs)... 2024-10-08T12:44:48-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T12:44:55 to 2024-10-08T12:49:55
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 16.47MiB    | 38.49MiB    | 83.80MiB    | 87.78MiB    |  
+| median | 16.43MiB    | 41.44MiB    | 89.51MiB    | 91.15MiB    |  
+| max    | 16.53MiB    | 41.49MiB    | 96.04MiB    | 93.33MiB    |  
+| min    | 16.43MiB    | 26.67MiB    | 64.31MiB    | 69.97MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T12:44:55 to 2024-10-08T12:49:55
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.67m       | 8.13m       | 21.79m      | 18.37m      |  
+| median | 0.68m       | 5.79m       | 17.98m      | 12.39m      |  
+| max    | 0.73m       | 13.77m      | 34.71m      | 35.49m      |  
+| min    | 0.60m       | 3.67m       | 4.73m       | 3.56m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T12:44:55 to 2024-10-08T12:49:55
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 165.22req/s  |  
+| webhook    | 2823.30ms/req|  
+| reqlatency | 23.93ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 1024 hamster deployments (2 pods each, 1 container each pod, 1024 VPAs)... 2024-10-08T12:51:07-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T12:51:39 to 2024-10-08T12:56:39
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 16.46MiB    | 76.33MiB    | 160.92MiB   | 178.38MiB   |  
+| median | 16.45MiB    | 81.36MiB    | 164.87MiB   | 189.25MiB   |  
+| max    | 16.47MiB    | 81.36MiB    | 193.84MiB   | 191.52MiB   |  
+| min    | 16.45MiB    | 58.31MiB    | 121.24MiB   | 130.49MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T12:51:39 to 2024-10-08T12:56:39
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.64m       | 60.30m      | 53.75m      | 69.91m      |  
+| median | 0.64m       | 22.69m      | 33.48m      | 41.41m      |  
+| max    | 0.72m       | 149.20m     | 133.16m     | 185.31m     |  
+| min    | 0.58m       | 15.85m      | 25.73m      | 28.04m      |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T12:51:39 to 2024-10-08T12:56:39
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 372.39req/s  |  
+| webhook    | 11321.75ms/req|  
+| reqlatency | 42.74ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+################################################################
+# TEST PHASE (Deployments w/ Scaling Pods PART 2): Completed at 2024-10-08T12:59:52-07:00.
+################################################################
+
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15 14
+################################################################
+# TEST PHASE (Deployment w/ Scaling Pods PART 2): Starting at 2024-10-08T13:00:30-07:00.
+################################################################
+----------------------------------------------------------------
+| Testing with 64 hamster deployments (4 pods each, 1 container each pod, 64 VPAs)... 2024-10-08T13:00:30-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T13:00:31 to 2024-10-08T13:05:31
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 18.87MiB    | 30.85MiB    | 80.63MiB    | 70.45MiB    |  
+| median | 19.78MiB    | 30.83MiB    | 81.34MiB    | 69.28MiB    |  
+| max    | 19.79MiB    | 30.88MiB    | 85.36MiB    | 72.91MiB    |  
+| min    | 17.38MiB    | 30.83MiB    | 75.20MiB    | 68.52MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T13:00:31 to 2024-10-08T13:05:31
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.61m       | 4.31m       | 15.49m      | 19.06m      |  
+| median | 0.61m       | 0.14m       | 17.15m      | 17.98m      |  
+| max    | 0.63m       | 12.46m      | 33.13m      | 42.35m      |  
+| min    | 0.59m       | 0.10m       | 0.02m       | 0.01m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T13:00:31 to 2024-10-08T13:05:31
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 173.53req/s  |  
+| webhook    | 2117.78ms/req|  
+| reqlatency | 22.88ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 256 hamster deployments (4 pods each, 1 container each pod, 256 VPAs)... 2024-10-08T13:06:00-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T13:06:09 to 2024-10-08T13:11:09
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 19.79MiB    | 44.12MiB    | 106.05MiB   | 120.32MiB   |  
+| median | 19.79MiB    | 44.16MiB    | 112.51MiB   | 120.62MiB   |  
+| max    | 19.80MiB    | 44.54MiB    | 112.91MiB   | 120.77MiB   |  
+| min    | 19.79MiB    | 43.66MiB    | 87.88MiB    | 118.88MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T13:06:09 to 2024-10-08T13:11:09
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.62m       | 19.44m      | 42.09m      | 45.64m      |  
+| median | 0.62m       | 13.50m      | 32.34m      | 32.74m      |  
+| max    | 0.64m       | 54.65m      | 102.39m     | 126.18m     |  
+| min    | 0.60m       | 2.30m       | 10.29m      | 4.66m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T13:06:09 to 2024-10-08T13:11:09
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 261.61req/s  |  
+| webhook    | 5401.48ms/req|  
+| reqlatency | 23.78ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 1024 hamster deployments (4 pods each, 1 container each pod, 1024 VPAs)... 2024-10-08T13:12:20-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T13:12:54 to 2024-10-08T13:17:54
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 19.81MiB    | 99.55MiB    | 180.49MiB   | 225.69MiB   |  
+| median | 19.81MiB    | 105.56MiB   | 193.47MiB   | 257.89MiB   |  
+| max    | 19.82MiB    | 106.02MiB   | 245.63MiB   | 274.68MiB   |  
+| min    | 19.79MiB    | 57.87MiB    | 108.84MiB   | 145.40MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T13:12:54 to 2024-10-08T13:17:54
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.59m       | 96.09m      | 63.76m      | 119.39m     |  
+| median | 0.58m       | 86.04m      | 64.97m      | 171.28m     |  
+| max    | 0.64m       | 207.88m     | 93.35m      | 176.26m     |  
+| min    | 0.56m       | 22.92m      | 34.31m      | 34.81m      |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T13:12:54 to 2024-10-08T13:17:54
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 511.24req/s  |  
+| webhook    | 16393.61ms/req|  
+| reqlatency | 94.87ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+################################################################
+# TEST PHASE (Deployment w/ Scaling Pods PART 2): Completed at 2024-10-08T13:21:14-07:00.
+################################################################
+
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15 14
+################################################################
+# TEST PHASE (Deployments w/ Added Containers PART 1): Starting at 2024-10-08T13:21:51-07:00.
+################################################################
+----------------------------------------------------------------
+| Testing with 64 hamster deployments (1 pod each, 2 containers each pod, 64 VPAs)... 2024-10-08T13:21:51-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T13:21:53 to 2024-10-08T13:26:53
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 20.73MiB    | 68.42MiB    | 122.85MiB   | 79.05MiB    |  
+| median | 20.74MiB    | 70.96MiB    | 123.17MiB   | 76.76MiB    |  
+| max    | 21.04MiB    | 70.97MiB    | 124.68MiB   | 92.20MiB    |  
+| min    | 20.15MiB    | 58.30MiB    | 120.84MiB   | 74.57MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T13:21:53 to 2024-10-08T13:26:53
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.83m       | 9.34m       | 22.01m      | 12.33m      |  
+| median | 0.71m       | 1.08m       | 9.21m       | 7.33m       |  
+| max    | 1.43m       | 34.85m      | 68.12m      | 32.42m      |  
+| min    | 0.64m       | 0.25m       | 3.92m       | 0.24m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T13:21:53 to 2024-10-08T13:26:53
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 164.85req/s  |  
+| webhook    | 1189.87ms/req|  
+| reqlatency | 20.49ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 256 hamster deployments (1 pod each, 2 containers each pod, 256 VPAs)... 2024-10-08T13:27:35-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T13:27:43 to 2024-10-08T13:32:43
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 20.16MiB    | 83.95MiB    | 131.94MiB   | 92.90MiB    |  
+| median | 20.16MiB    | 85.99MiB    | 130.87MiB   | 95.60MiB    |  
+| max    | 20.17MiB    | 86.12MiB    | 141.40MiB   | 100.68MiB   |  
+| min    | 20.15MiB    | 79.72MiB    | 125.01MiB   | 73.92MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T13:27:43 to 2024-10-08T13:32:43
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.62m       | 16.37m      | 19.66m      | 12.61m      |  
+| median | 0.61m       | 15.29m      | 13.30m      | 3.42m       |  
+| max    | 0.66m       | 45.33m      | 35.07m      | 38.17m      |  
+| min    | 0.59m       | 0.87m       | 11.24m      | 0.62m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T13:27:43 to 2024-10-08T13:32:43
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 157.67req/s  |  
+| webhook    | 2055.02ms/req|  
+| reqlatency | 22.99ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 1024 hamster deployments (1 pod each, 2 containers each pod, 1024 VPAs)... 2024-10-08T13:34:18-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T13:34:49 to 2024-10-08T13:39:49
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 20.07MiB    | 139.10MiB   | 200.78MiB   | 184.50MiB   |  
+| median | 20.06MiB    | 143.20MiB   | 202.82MiB   | 193.65MiB   |  
+| max    | 20.12MiB    | 149.43MiB   | 232.83MiB   | 198.11MiB   |  
+| min    | 20.06MiB    | 113.69MiB   | 160.43MiB   | 141.43MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T13:34:49 to 2024-10-08T13:39:49
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.65m       | 47.95m      | 56.39m      | 79.40m      |  
+| median | 0.63m       | 25.28m      | 37.37m      | 40.75m      |  
+| max    | 0.75m       | 127.17m     | 144.15m     | 221.45m     |  
+| min    | 0.60m       | 19.85m      | 30.06m      | 37.10m      |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T13:34:49 to 2024-10-08T13:39:49
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 311.92req/s  |  
+| webhook    | 7574.10ms/req|  
+| reqlatency | 24.58ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+################################################################
+# TEST PHASE (Deployments w/ Added Containers PART 1): Completed at 2024-10-08T13:43:21-07:00.
+################################################################
+
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+Waiting for deployment "vpa-recommender-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15
+################################################################
+# TEST PHASE (Deployments w/ Added Containers PART 2): Starting at 2024-10-08T13:43:53-07:00.
+################################################################
+----------------------------------------------------------------
+| Testing with 64 hamster deployments (1 pod each, 4 containers each pod, 64 VPAs)... 2024-10-08T13:43:53-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T13:43:55 to 2024-10-08T13:48:55
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 20.58MiB    | 30.94MiB    | 64.79MiB    | 103.14MiB   |  
+| median | 20.33MiB    | 33.07MiB    | 66.39MiB    | 102.22MiB   |  
+| max    | 21.00MiB    | 33.07MiB    | 69.93MiB    | 107.33MiB   |  
+| min    | 20.32MiB    | 22.41MiB    | 57.87MiB    | 96.70MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T13:43:55 to 2024-10-08T13:48:55
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.85m       | 8.44m       | 17.43m      | 15.35m      |  
+| median | 0.73m       | 4.42m       | 15.82m      | 15.51m      |  
+| max    | 1.55m       | 28.72m      | 35.66m      | 35.94m      |  
+| min    | 0.62m       | 0.49m       | 5.09m       | 0.61m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T13:43:55 to 2024-10-08T13:48:55
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 140.06req/s  |  
+| webhook    | 1146.47ms/req|  
+| reqlatency | 20.80ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 256 hamster deployments (1 pod each, 4 containers each pod, 256 VPAs)... 2024-10-08T13:49:53-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T13:50:00 to 2024-10-08T13:55:00
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 20.25MiB    | 48.50MiB    | 103.17MiB   | 140.39MiB   |  
+| median | 20.25MiB    | 50.95MiB    | 109.78MiB   | 146.18MiB   |  
+| max    | 20.28MiB    | 54.10MiB    | 119.14MiB   | 154.88MiB   |  
+| min    | 20.24MiB    | 33.08MiB    | 69.99MiB    | 106.49MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T13:50:00 to 2024-10-08T13:55:00
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.60m       | 9.40m       | 24.41m      | 23.14m      |  
+| median | 0.59m       | 6.18m       | 19.47m      | 9.65m       |  
+| max    | 0.71m       | 19.46m      | 47.33m      | 57.57m      |  
+| min    | 0.54m       | 2.42m       | 7.97m       | 3.46m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T13:50:00 to 2024-10-08T13:55:00
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 174.33req/s  |  
+| webhook    | 1858.20ms/req|  
+| reqlatency | 23.68ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+----------------------------------------------------------------
+| Testing with 1024 hamster deployments (1 pod each, 4 containers each pod, 1024 VPAs)... 2024-10-08T13:56:36-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28avg_over_time%28container_memory_working_set_bytes%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%3A%5D%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28avg_over_time%28container_memory_working_set_bytes%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%3A%5D%29%29&time=1728421330
+
+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28quantile_over_time%280.5%2C+container_memory_working_set_bytes%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%3A%5D%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28quantile_over_time%280.5%2C+container_memory_working_set_bytes%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%3A%5D%29%29&time=1728421330
+
+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28max_over_time%28container_memory_working_set_bytes%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%3A%5D%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28max_over_time%28container_memory_working_set_bytes%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%3A%5D%29%29&time=1728421330
+
+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28min_over_time%28container_memory_working_set_bytes%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%3A%5D%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28min_over_time%28container_memory_working_set_bytes%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%3A%5D%29%29&time=1728421330
+
+
+Last 5m of memory usage from 2024-10-08T13:57:10 to 2024-10-08T14:02:10
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   |  
+| median |  
+| max    |  
+| min    |  
++--------+-------------+-------------+-------------+-------------+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28avg_over_time%28irate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%5D%29%5B5m%3A%5D%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28avg_over_time%28irate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%5D%29%5B5m%3A%5D%29%29&time=1728421330
+
+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28quantile_over_time%280.5%2C+irate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%5D%29%5B5m%3A%5D%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28quantile_over_time%280.5%2C+irate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%5D%29%5B5m%3A%5D%29%29&time=1728421330
+
+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28max_over_time%28irate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%5D%29%5B5m%3A%5D%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28max_over_time%28irate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%5D%29%5B5m%3A%5D%29%29&time=1728421330
+
+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28min_over_time%28irate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%5D%29%5B5m%3A%5D%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28min_over_time%28irate%28container_cpu_usage_seconds_total%7Bnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%2Cimage%3D~%22.%2Avertical-pod-autoscaler.%2A%22%2Cpod%3D~%22vertical-pod-autoscaler-operator-85f95d4b5b-v26sp%7Cvpa-admission-plugin-default-fc8b8767b-xtcv6%7Cvpa-recommender-default-5c578d5c5-7r4mx%7Cvpa-updater-default-bbc69497-dj2pn%22%7D%5B5m%5D%29%5B5m%3A%5D%29%29&time=1728421330
+
+
+Last 5m of cpu usage from 2024-10-08T13:57:10 to 2024-10-08T14:02:10
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   |  
+| median |  
+| max    |  
+| min    |  
++--------+-------------+-------------+-------------+-------------+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=avg_over_time%28sum%28irate%28apiserver_request_total%5B5m%5D%29%29%5B5m%3A%5D%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=avg_over_time%28sum%28irate%28apiserver_request_total%5B5m%5D%29%29%5B5m%3A%5D%29&time=1728421330
+
+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=avg_over_time%28sum%28rate%28apiserver_admission_webhook_admission_duration_seconds_count%7Bname%3D%22vpa.k8s.io%22%2C+type%3D%22admit%22%7D%5B5m%5D%29%29%5B5m%3A%5D%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=avg_over_time%28sum%28rate%28apiserver_admission_webhook_admission_duration_seconds_count%7Bname%3D%22vpa.k8s.io%22%2C+type%3D%22admit%22%7D%5B5m%5D%29%29%5B5m%3A%5D%29&time=1728421330
+
+
+
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=histogram_quantile%280.95%2C+sum%28resource_verb%3Aapiserver_request_duration_seconds_bucket%3Arate%3A5m%29+by+%28le%29%29&time=1728421330 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=histogram_quantile%280.95%2C+sum%28resource_verb%3Aapiserver_request_duration_seconds_bucket%3Arate%3A5m%29+by+%28le%29%29&time=1728421330
+
+
+Last 5m of API usage from 2024-10-08T13:57:10 to 2024-10-08T14:02:10
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    |  
+| webhook    |  
+| reqlatency |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+################################################################
+# TEST PHASE (Deployments w/ Added Containers PART 2): Completed at 2024-10-08T14:05:35-07:00.
+################################################################
+
+################################################################
+# TEST PHASE (Rate Limiters): Starting at 2024-10-08T14:05:35-07:00.
+################################################################
+----------------------------------------------------------------
+| Testing with 1024 hamster deployments (1 pod each, 1 containers each pod, 1024 VPAs) with 40 QPS for admission... 2024-10-08T14:05:35-07:00
+----------------------------------------------------------------
+deployment.apps/vpa-admission-plugin-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left:
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421542 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421542
+
+
+ 18
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421547 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421547
+
+
+ 17
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421552 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421552
+
+
+ 16
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421558 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421558
+
+
+ 15
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421563 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421563
+
+
+ 14
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421568 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421568
+
+
+ 13
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421574 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421574
+
+
+ 12
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421579 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421579
+
+
+ 11
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421585 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421585
+
+
+ 10
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421590 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421590
+
+
+ 9
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421595 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421595
+
+
+ 8
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421601 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421601
+
+
+ 7
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421606 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421606
+
+
+ 6
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421612 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421612
+
+
+ 5
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421617 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421617
+
+
+ 4
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421622 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421622
+
+
+ 3
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421628 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421628
+
+
+ 2
+https: error: SSLError: HTTPSConnectionPool(host='thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org', port=443): Max retries exceeded with url: /api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421633 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))) while doing a GET request to URL: https://thanos-querier-openshift-monitoring.apps.ci-ln-twwbpqb-76ef8.aws-2.ci.openshift.org/api/v1/query?query=sum+by+%28pod%29%28container_memory_working_set_bytes%7Bpod%3D%22vpa-admission-plugin-default-7464c6cb76-79b9s%22%2Cnamespace%3D%22openshift-vertical-pod-autoscaler%22%2Ccontainer%21%3D%22%22%7D%29&time=1728421633
+
+
+ 1
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+jq: parse error: Invalid numeric literal at line 1, column 20
+jq: parse error: Invalid numeric literal at line 1, column 7
+jq: parse error: Invalid numeric literal at line 1, column 7
+jq: parse error: Invalid numeric literal at line 1, column 7
+Last 5m of memory usage from 2024-10-08T14:07:49 to 2024-10-08T14:12:49
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   |  
+| median |  
+| max    |  
+| min    |  
++--------+-------------+-------------+-------------+-------------+
+jq: parse error: Invalid numeric literal at line 1, column 7
+jq: parse error: Invalid numeric literal at line 1, column 7
+jq: parse error: Invalid numeric literal at line 1, column 7
+jq: parse error: Invalid numeric literal at line 1, column 7
+Last 5m of cpu usage from 2024-10-08T14:07:49 to 2024-10-08T14:12:49
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   |  
+| median |  
+| max    |  
+| min    |  
++--------+-------------+-------------+-------------+-------------+
+jq: parse error: Invalid numeric literal at line 1, column 7
+jq: parse error: Invalid numeric literal at line 1, column 7
+jq: parse error: Invalid numeric literal at line 1, column 7
+Last 5m of API usage from 2024-10-08T14:07:49 to 2024-10-08T14:12:49
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    |  
+| webhook    |  
+| reqlatency |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+----------------------------------------------------------------
+| Testing with 1024 hamster deployments (1 pod each, 1 containers each pod, 1024 VPAs) with 40 QPS for recommender... 2024-10-08T14:17:38-07:00
+----------------------------------------------------------------
+deployment.apps/vpa-recommender-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+Waiting for deployment "vpa-updater-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left:jq: parse error: Invalid numeric literal at line 1, column 7
+ 18jq: parse error: Invalid numeric literal at line 1, column 7
+ 17Cleaning up...
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.

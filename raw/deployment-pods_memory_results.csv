@@ -1,0 +1,10 @@
+Step;Operator;Admission;Recommender;Updater
+64 deployments 1 pods;14.45MiB;26.72MiB;58.23MiB;59.90MiB;
+256 deployments 1 pods;14.28MiB;39.43MiB;76.98MiB;85.15MiB;
+1024 deployments 1 pods;14.28MiB;81.49MiB;143.87MiB;152.95MiB;
+64 deployments 2 pods;16.68MiB;26.67MiB;64.08MiB;70.37MiB;
+256 deployments 2 pods;16.47MiB;38.49MiB;83.80MiB;87.78MiB;
+1024 deployments 2 pods;16.46MiB;76.33MiB;160.92MiB;178.38MiB;
+64 deployments 4 pods;18.87MiB;30.85MiB;80.63MiB;70.45MiB;
+256 deployments 4 pods;19.79MiB;44.12MiB;106.05MiB;120.32MiB;
+1024 deployments 4 pods;19.81MiB;99.55MiB;180.49MiB;225.69MiB;

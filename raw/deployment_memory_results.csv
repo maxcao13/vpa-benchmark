@@ -1,0 +1,4 @@
+Step;Operator;Admission;Recommender;Updater
+64 deployments;14.45MiB;26.72MiB;58.23MiB;59.90MiB;
+256 deployments;14.28MiB;39.43MiB;76.98MiB;85.15MiB;
+1024 deployments;14.28MiB;81.49MiB;143.87MiB;152.95MiB;

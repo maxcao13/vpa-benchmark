@@ -1,0 +1,6 @@
+Step;Operator;Admission;Recommender;Updater
+64 deployments 4 containers;13.89MiB;29.46MiB;62.08MiB;59.65MiB;
+128 deployments 4 containers;13.86MiB;36.73MiB;77.09MiB;78.75MiB;
+256 deployments 4 containers;13.95MiB;52.00MiB;106.14MiB;112.21MiB;
+512 deployments 4 containers;14.05MiB;74.58MiB;145.08MiB;155.12MiB;
+1024 deployments 4 containers;14.05MiB;133.42MiB;212.69MiB;252.10MiB;

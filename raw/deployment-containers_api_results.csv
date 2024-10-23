@@ -1,0 +1,10 @@
+Step;APIPerformance;Webhook;RequestLatency
+64 deployments 1 containers;121.62req/s;608.15ms/req;20.86ms/req;
+256 deployments 1 containers;190.05req/s;2263.70ms/req;24.54ms/req;
+1024 deployments 1 containers;279.77req/s;7486.67ms/req;23.44ms/req;
+64 deployments 2 containers;164.85req/s;1189.87ms/req;20.49ms/req;
+256 deployments 2 containers;157.67req/s;2055.02ms/req;22.99ms/req;
+1024 deployments 2 containers;311.92req/s;7574.10ms/req;24.58ms/req;
+64 deployments 4 containers;140.06req/s;1146.47ms/req;20.80ms/req;
+256 deployments 4 containers;174.33req/s;1858.20ms/req;23.68ms/req;
+1024 deployments 4 containers;

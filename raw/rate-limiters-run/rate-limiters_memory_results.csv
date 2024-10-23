@@ -1,0 +1,7 @@
+Step;Operator;Admission;Recommender;Updater
+640 deployments|1 containers|admission|40;17.96MiB;60.68MiB;113.04MiB;115.11MiB;
+640 deployments|1 containers|recommender|40;18.49MiB;62.34MiB;121.93MiB;121.42MiB;
+640 deployments|1 containers|updater|40;18.58MiB;61.20MiB;117.56MiB;122.75MiB;
+640 deployments|1 containers|all|40;18.66MiB;62.11MiB;133.36MiB;128.22MiB;
+640 deployments|1 containers|all|80;18.84MiB;60.93MiB;127.77MiB;130.83MiB;
+640 deployments|1 containers|all|80|Memory Saver;18.93MiB;64.71MiB;127.90MiB;131.18MiB;

@@ -1,0 +1,313 @@
+Time now: 2024-10-08T15:12:27-07:00
+Cluster info: 20 worker node(s) with a total of 80 CPU cores and 306Gi memory. 538 total pods.
+--- Resource Capacity ---
+NODE                                         CPU REQUESTS   CPU LIMITS   MEMORY REQUESTS   MEMORY LIMITS
+*                                            8147m (11%)    200m (0%)    55258Mi (19%)     0Mi (0%)
+ip-10-0-108-69.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-113-254.us-west-2.compute.internal   374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-114-124.us-west-2.compute.internal   692m (19%)     10m (0%)     4563Mi (31%)      0Mi (0%)
+ip-10-0-119-44.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-126-175.us-west-2.compute.internal   374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-127-204.us-west-2.compute.internal   374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-14-27.us-west-2.compute.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-22-112.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-24-145.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-30-25.us-west-2.compute.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-34-181.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-39-76.us-west-2.compute.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-42-181.us-west-2.compute.internal    487m (13%)     10m (0%)     3039Mi (20%)      0Mi (0%)
+ip-10-0-5-168.us-west-2.compute.internal     610m (17%)     10m (0%)     4255Mi (29%)      0Mi (0%)
+ip-10-0-52-71.us-west-2.compute.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-56-30.us-west-2.compute.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-66-139.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-70-178.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-71-189.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-72-243.us-west-2.compute.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+################################################################
+# TEST PHASE (Rate Limiters): Starting at 2024-10-08T15:12:29-07:00.
+################################################################
+----------------------------------------------------------------
+| Testing with 640 hamster deployments (1 pod each, 1 containers each pod, 640 VPAs) with 40 QPS for admission... 2024-10-08T15:12:29-07:00
+----------------------------------------------------------------
+deployment.apps/vpa-admission-plugin-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+Waiting for deployment "vpa-updater-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T15:13:13 to 2024-10-08T15:18:13
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 17.96MiB    | 60.68MiB    | 113.04MiB   | 115.11MiB   |  
+| median | 17.97MiB    | 62.27MiB    | 122.99MiB   | 115.74MiB   |  
+| max    | 18.06MiB    | 62.40MiB    | 127.57MiB   | 122.13MiB   |  
+| min    | 17.87MiB    | 56.21MiB    | 87.36MiB    | 107.88MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T15:13:13 to 2024-10-08T15:18:13
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.67m       | 42.53m      | 35.10m      | 57.63m      |  
+| median | 0.65m       | 16.87m      | 34.64m      | 36.69m      |  
+| max    | 0.75m       | 151.05m     | 51.98m      | 166.12m     |  
+| min    | 0.60m       | 10.84m      | 20.76m      | 11.79m      |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T15:13:13 to 2024-10-08T15:18:13
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 220.99req/s  |  
+| webhook    | 4991.98ms/req|  
+| reqlatency | 24.65ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+----------------------------------------------------------------
+| Testing with 640 hamster deployments (1 pod each, 1 containers each pod, 640 VPAs) with 40 QPS for recommender... 2024-10-08T15:21:22-07:00
+----------------------------------------------------------------
+deployment.apps/vpa-recommender-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15 14
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T15:22:09 to 2024-10-08T15:27:09
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 18.49MiB    | 62.34MiB    | 121.93MiB   | 121.42MiB   |  
+| median | 18.34MiB    | 63.74MiB    | 127.43MiB   | 123.11MiB   |  
+| max    | 18.81MiB    | 63.82MiB    | 129.33MiB   | 125.32MiB   |  
+| min    | 18.25MiB    | 58.82MiB    | 104.42MiB   | 112.49MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T15:22:09 to 2024-10-08T15:27:09
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.64m       | 36.54m      | 67.55m      | 42.06m      |  
+| median | 0.65m       | 18.57m      | 65.76m      | 33.71m      |  
+| max    | 0.68m       | 112.87m     | 92.89m      | 83.46m      |  
+| min    | 0.60m       | 14.85m      | 43.34m      | 26.50m      |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T15:22:09 to 2024-10-08T15:27:09
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 241.14req/s  |  
+| webhook    | 4977.72ms/req|  
+| reqlatency | 23.97ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+----------------------------------------------------------------
+| Testing with 640 hamster deployments (1 pod each, 1 containers each pod, 640 VPAs) with 40 QPS for updater... 2024-10-08T15:30:24-07:00
+----------------------------------------------------------------
+deployment.apps/vpa-updater-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15 14
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T15:31:11 to 2024-10-08T15:36:11
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 18.58MiB    | 61.20MiB    | 117.56MiB   | 122.75MiB   |  
+| median | 18.34MiB    | 62.49MiB    | 126.93MiB   | 127.28MiB   |  
+| max    | 18.95MiB    | 62.49MiB    | 127.50MiB   | 132.00MiB   |  
+| min    | 18.34MiB    | 58.11MiB    | 91.42MiB    | 108.30MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T15:31:11 to 2024-10-08T15:36:11
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.69m       | 38.52m      | 44.05m      | 60.81m      |  
+| median | 0.70m       | 46.96m      | 47.48m      | 52.81m      |  
+| max    | 0.80m       | 66.28m      | 68.21m      | 110.30m     |  
+| min    | 0.61m       | 1.45m       | 8.47m       | 2.44m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T15:31:11 to 2024-10-08T15:36:11
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 253.62req/s  |  
+| webhook    | 5395.56ms/req|  
+| reqlatency | 35.29ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+----------------------------------------------------------------
+| Testing with 640 hamster deployments (1 pod each, 1 containers each pod, 640 VPAs) with 40 QPS for all... 2024-10-08T15:39:27-07:00
+----------------------------------------------------------------
+deployment.apps/vpa-admission-plugin-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+deployment.apps/vpa-recommender-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+deployment.apps/vpa-updater-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+Waiting for deployment "vpa-recommender-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T15:40:13 to 2024-10-08T15:45:13
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 18.66MiB    | 62.11MiB    | 133.36MiB   | 128.22MiB   |  
+| median | 18.39MiB    | 62.57MiB    | 141.50MiB   | 139.91MiB   |  
+| max    | 19.79MiB    | 62.57MiB    | 141.80MiB   | 139.97MiB   |  
+| min    | 18.37MiB    | 60.33MiB    | 112.89MiB   | 110.61MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T15:40:13 to 2024-10-08T15:45:13
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.66m       | 30.59m      | 54.94m      | 41.23m      |  
+| median | 0.65m       | 18.94m      | 66.83m      | 4.69m       |  
+| max    | 0.72m       | 87.88m      | 79.59m      | 142.21m     |  
+| min    | 0.58m       | 1.34m       | 23.19m      | 0.00m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T15:40:13 to 2024-10-08T15:45:13
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 252.97req/s  |  
+| webhook    | 5613.33ms/req|  
+| reqlatency | 40.41ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+----------------------------------------------------------------
+| Testing with 640 hamster deployments (1 pod each, 1 containers each pod, 640 VPAs) with 80 QPS for all... 2024-10-08T15:48:27-07:00
+----------------------------------------------------------------
+deployment.apps/vpa-admission-plugin-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+deployment.apps/vpa-recommender-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+deployment.apps/vpa-updater-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+Waiting for deployment "vpa-recommender-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T15:49:12 to 2024-10-08T15:54:12
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 18.84MiB    | 60.93MiB    | 127.77MiB   | 130.83MiB   |  
+| median | 18.79MiB    | 62.56MiB    | 139.63MiB   | 140.29MiB   |  
+| max    | 19.46MiB    | 62.57MiB    | 140.32MiB   | 141.90MiB   |  
+| min    | 18.57MiB    | 54.52MiB    | 109.50MiB   | 112.20MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T15:49:12 to 2024-10-08T15:54:12
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.66m       | 29.76m      | 53.69m      | 67.24m      |  
+| median | 0.66m       | 38.46m      | 42.91m      | 34.32m      |  
+| max    | 0.76m       | 68.16m      | 101.05m     | 195.54m     |  
+| min    | 0.57m       | 1.31m       | 19.35m      | 2.73m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T15:49:12 to 2024-10-08T15:54:12
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 262.34req/s  |  
+| webhook    | 5551.15ms/req|  
+| reqlatency | 42.25ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+----------------------------------------------------------------
+| Testing with 640 hamster deployments (1 pod each, 1 containers each pod, 640 VPAs) with 80 QPS for all... 2024-10-08T15:57:28-07:00
+----------------------------------------------------------------
+deployment.apps/vpa-admission-plugin-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+deployment.apps/vpa-recommender-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+deployment.apps/vpa-updater-default paused
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+Waiting for deployment "vpa-recommender-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-08T15:58:11 to 2024-10-08T16:03:11
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 18.93MiB    | 64.71MiB    | 127.90MiB   | 131.18MiB   |  
+| median | 18.84MiB    | 65.53MiB    | 137.73MiB   | 137.75MiB   |  
+| max    | 19.82MiB    | 65.54MiB    | 137.93MiB   | 143.52MiB   |  
+| min    | 18.56MiB    | 63.46MiB    | 105.25MiB   | 112.17MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-08T15:58:11 to 2024-10-08T16:03:11
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.66m       | 33.34m      | 43.57m      | 34.52m      |  
+| median | 0.63m       | 19.04m      | 58.69m      | 33.00m      |  
+| max    | 0.76m       | 96.57m      | 65.32m      | 91.39m      |  
+| min    | 0.59m       | 1.21m       | 0.07m       | 2.02m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage from 2024-10-08T15:58:11 to 2024-10-08T16:03:11
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 257.05req/s  |  
+| webhook    | 5585.93ms/req|  
+| reqlatency | 32.47ms/req  |  
++------------+--------------+
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+################################################################
+# TEST PHASE (Rate Limiters): Completed at 2024-10-08T16:06:30-07:00.
+################################################################
+Benchmark completed.
+Cleaning up...
+Deleting hamster deployments...
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.

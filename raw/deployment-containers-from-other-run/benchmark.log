@@ -1,0 +1,196 @@
+Time now: 2024-10-07T17:41:52-07:00
+Cluster info: 20 worker node(s) with a total of 80 CPU cores and 306Gi memory. 540 total pods.
+--- Resource Capacity ---
+NODE                           CPU REQUESTS   CPU LIMITS   MEMORY REQUESTS   MEMORY LIMITS
+*                              8167m (11%)    200m (0%)    55358Mi (19%)     0Mi (0%)
+ip-10-0-1-232.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-102-32.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-106-116.ec2.internal   374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-11-110.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-11-4.ec2.internal      374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-115-83.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-120-198.ec2.internal   374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-13-90.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-3-125.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-32-109.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-41-78.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-42-233.ec2.internal    702m (20%)     10m (0%)     4613Mi (31%)      0Mi (0%)
+ip-10-0-48-219.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-58-108.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-66-91.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-71-227.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-77-54.ec2.internal     374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-86-156.ec2.internal    720m (20%)     10m (0%)     4561Mi (31%)      0Mi (0%)
+ip-10-0-88-197.ec2.internal    374m (10%)     10m (0%)     2553Mi (17%)      0Mi (0%)
+ip-10-0-94-21.ec2.internal     387m (11%)     10m (0%)     2783Mi (19%)      0Mi (0%)
+
+verticalpodautoscalercontroller.autoscaling.openshift.io/default patched
+Waiting for deployment "vpa-admission-plugin-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-admission-plugin-default" successfully rolled out
+Waiting for deployment "vpa-recommender-default" rollout to finish: 0 of 1 updated replicas are available...
+deployment "vpa-recommender-default" successfully rolled out
+deployment "vpa-updater-default" successfully rolled out
+Waiting for VPA pods to be ready for scraping... Retries left: 18 17 16 15 14
+################################################################
+# TEST PHASE (Deployments w/ Added Containers PART 2): Starting at 2024-10-07T17:42:37-07:00.
+################################################################
+----------------------------------------------------------------
+| Testing with 64 hamster deployments (1 pod each, 4 containers each pod, 64 VPAs)... 2024-10-07T17:42:37-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-07T17:48:00 to 2024-10-07T17:43:00
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 13.89MiB    | 29.46MiB    | 62.08MiB    | 59.65MiB    |  
+| median | 13.93MiB    | 30.59MiB    | 64.65MiB    | 61.00MiB    |  
+| max    | 13.95MiB    | 30.61MiB    | 67.61MiB    | 61.73MiB    |  
+| min    | 13.81MiB    | 26.70MiB    | 52.94MiB    | 53.93MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-07T17:48:00 to 2024-10-07T17:43:00
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.65m       | 6.13m       | 12.81m      | 11.84m      |  
+| median | 0.67m       | 0.34m       | 7.19m       | 2.06m       |  
+| max    | 0.73m       | 25.06m      | 30.35m      | 32.92m      |  
+| min    | 0.54m       | 0.11m       | 4.08m       | 0.01m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage at 2024-10-07T17:48:00
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 118.63req/s  |  
+| webhook    | 599.38ms/req |  
+| reqlatency | 19.84ms/req  |  
++------------+--------------+
+----------------------------------------------------------------
+| Testing with 128 hamster deployments (1 pod each, 4 containers each pod, 128 VPAs)... 2024-10-07T17:49:49-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-07T17:55:15 to 2024-10-07T17:50:15
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 13.86MiB    | 36.73MiB    | 77.09MiB    | 78.75MiB    |  
+| median | 13.85MiB    | 37.16MiB    | 81.17MiB    | 80.70MiB    |  
+| max    | 13.90MiB    | 37.17MiB    | 83.61MiB    | 81.30MiB    |  
+| min    | 13.84MiB    | 35.03MiB    | 64.09MiB    | 73.50MiB    |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-07T17:55:15 to 2024-10-07T17:50:15
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.69m       | 1.08m       | 17.35m      | 13.05m      |  
+| median | 0.69m       | 0.78m       | 20.31m      | 2.94m       |  
+| max    | 0.78m       | 2.53m       | 26.48m      | 35.67m      |  
+| min    | 0.62m       | 0.31m       | 7.64m       | 0.36m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage at 2024-10-07T17:55:15
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 116.59req/s  |  
+| webhook    | 1113.33ms/req|  
+| reqlatency | 20.12ms/req  |  
++------------+--------------+
+----------------------------------------------------------------
+| Testing with 256 hamster deployments (1 pod each, 4 containers each pod, 256 VPAs)... 2024-10-07T17:58:54-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-07T18:04:26 to 2024-10-07T17:59:26
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 13.95MiB    | 52.00MiB    | 106.14MiB   | 112.21MiB   |  
+| median | 13.95MiB    | 53.67MiB    | 111.31MiB   | 114.73MiB   |  
+| max    | 13.96MiB    | 53.67MiB    | 118.71MiB   | 116.72MiB   |  
+| min    | 13.93MiB    | 47.39MiB    | 81.29MiB    | 103.97MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-07T18:04:26 to 2024-10-07T17:59:26
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.67m       | 9.54m       | 29.17m      | 27.41m      |  
+| median | 0.64m       | 9.66m       | 36.78m      | 33.10m      |  
+| max    | 0.75m       | 18.41m      | 47.09m      | 50.19m      |  
+| min    | 0.62m       | 1.14m       | 7.42m       | 3.75m       |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage at 2024-10-07T18:04:26
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 159.39req/s  |  
+| webhook    | 2183.70ms/req|  
+| reqlatency | 21.85ms/req  |  
++------------+--------------+
+----------------------------------------------------------------
+| Testing with 512 hamster deployments (1 pod each, 4 containers each pod, 512 VPAs)... 2024-10-07T18:09:05-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-07T18:14:48 to 2024-10-07T18:09:48
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 14.05MiB    | 74.58MiB    | 145.08MiB   | 155.12MiB   |  
+| median | 14.05MiB    | 77.06MiB    | 147.11MiB   | 151.29MiB   |  
+| max    | 14.07MiB    | 79.22MiB    | 177.76MiB   | 165.43MiB   |  
+| min    | 14.04MiB    | 68.70MiB    | 108.63MiB   | 142.78MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-07T18:14:48 to 2024-10-07T18:09:48
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.67m       | 26.23m      | 49.94m      | 65.65m      |  
+| median | 0.67m       | 19.87m      | 46.61m      | 49.84m      |  
+| max    | 0.69m       | 67.89m      | 104.43m     | 163.42m     |  
+| min    | 0.63m       | 2.66m       | 10.88m      | 12.38m      |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage at 2024-10-07T18:14:48
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 254.72req/s  |  
+| webhook    | 3788.89ms/req|  
+| reqlatency | 23.18ms/req  |  
++------------+--------------+
+----------------------------------------------------------------
+| Testing with 1024 hamster deployments (1 pod each, 4 containers each pod, 1024 VPAs)... 2024-10-07T18:20:31-07:00
+----------------------------------------------------------------
+Waiting for hamsters to roll out...
+Waiting 5m for metrics data...
+Last 5m of memory usage from 2024-10-07T18:26:46 to 2024-10-07T18:21:46
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 14.05MiB    | 133.42MiB   | 212.69MiB   | 252.10MiB   |  
+| median | 14.05MiB    | 133.36MiB   | 220.39MiB   | 255.00MiB   |  
+| max    | 14.05MiB    | 138.00MiB   | 245.66MiB   | 257.29MiB   |  
+| min    | 14.05MiB    | 129.26MiB   | 181.05MiB   | 238.27MiB   |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of cpu usage from 2024-10-07T18:26:46 to 2024-10-07T18:21:46
++--------+-------------+-------------+-------------+-------------+
+| Type   | Operator    | Admission   | Recommender | Updater     |
++--------+-------------+-------------+-------------+-------------+
+| mean   | 0.67m       | 35.42m      | 61.84m      | 76.64m      |  
+| median | 0.65m       | 26.40m      | 45.16m      | 51.26m      |  
+| max    | 0.75m       | 72.93m      | 142.67m     | 174.99m     |  
+| min    | 0.61m       | 24.52m      | 32.36m      | 50.77m      |  
++--------+-------------+-------------+-------------+-------------+
+Last 5m of API usage at 2024-10-07T18:26:46
++------------+--------------+
+| Type       | Value        |
++------------+--------------+
+| apiperf    | 257.12req/s  |  
+| webhook    | 7134.81ms/req|  
+| reqlatency | 22.99ms/req  |  
++------------+--------------+
+################################################################
+# TEST PHASE (Deployments w/ Added Containers PART 2): Completed at 2024-10-07T18:36:38-07:00.
+################################################################
+Benchmark completed.
+Cleaning up...
